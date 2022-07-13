@@ -1,7 +1,11 @@
 # PowerBI-Visuals-Tornado
 
 This is a clone from the original [Microsoft Repository](https://github.com/microsoft/PowerBI-visuals-Tornado).
-Now running with powerbi-visuals-tools 4.0.5, apiVersion 3.8.4 and d3.js v7.
+Now running with 
+
+- powerbi-visuals-tools 4.0.5
+- apiVersion 3.8.4
+- d3.js v7
 
 > A bar chart with category values listed vertically. Use for comparing the relative importance of a variable between two distinct groups.
 
