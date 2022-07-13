@@ -1,0 +1,322 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Group",
+            "displayNameKey": "Visual_Group",
+            "name": "Category",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Legend",
+            "displayNameKey": "Visual_Legend",
+            "name": "Series",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Values",
+            "displayNameKey": "Visual_Values",
+            "name": "Values",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "Category": {
+                        "max": 1
+                    },
+                    "Values": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "Series": {
+                        "min": 0,
+                        "max": 1
+                    }
+                },
+                {
+                    "Category": {
+                        "max": 1
+                    },
+                    "Values": {
+                        "min": 2,
+                        "max": 2
+                    },
+                    "Series": {
+                        "max": 0
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "Category"
+                    }
+                },
+                "values": {
+                    "group": {
+                        "by": "Series",
+                        "select": [
+                            {
+                                "for": {
+                                    "in": "Values"
+                                }
+                            }
+                        ],
+                        "dataReductionAlgorithm": {
+                            "top": {}
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "objects": {
+        "dataPoint": {
+            "displayName": "Data colors",
+            "displayNameKey": "Visual_DataColors",
+            "description": "Display data color options",
+            "descriptionKey": "Visual_Description_DataColors",
+            "properties": {
+                "fill": {
+                    "displayName": "Fill",
+                    "displayNameKey": "Visual_Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "categoryAxis": {
+            "displayName": "X-Axis",
+            "displayNameKey": "Visual_XAxis",
+            "properties": {
+                "end": {
+                    "displayName": "End",
+                    "displayNameKey": "Visual_XAxisEnd",
+                    "type": {
+                        "numeric": true
+                    },
+                    "suppressFormatPainterCopy": true
+                }
+            }
+        },
+        "labels": {
+            "displayName": "Data Labels",
+            "displayNameKey": "Visual_DataLabels",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "displayNameKey": "Visual_Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "labelPrecision": {
+                    "displayName": "Decimal Places",
+                    "displayNameKey": "Visual_DataLabels_DecimalPlaces",
+                    "placeHolderText": "Auto",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "fontSize": {
+                    "displayName": "Text size",
+                    "displayNameKey": "Visual_TextSize",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "labelDisplayUnits": {
+                    "displayName": "Display Units",
+                    "displayNameKey": "Visual_DisplayUnits",
+                    "type": {
+                        "formatting": {
+                            "labelDisplayUnits": true
+                        }
+                    }
+                },
+                "insideFill": {
+                    "displayName": "Inside fill",
+                    "displayNameKey": "Visual_DataLabels_InsideFill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "outsideFill": {
+                    "displayName": "Outside fill",
+                    "displayNameKey": "Visual_DataLabels_OutsideFill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+         "legend": {
+            "displayName": "Legend",
+            "displayNameKey": "Visual_Legend",
+            "properties": {
+                "show": {
+                    "displayName": "show",
+                    "displayNameKey": "Visual_Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "position": {
+                    "displayName": "Position",
+                    "displayNameKey": "Visual_Legend_Position",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "Top",
+                                "displayName": "Top",
+                                "displayNameKey": "Visual_Legend_Position_Top"
+                            },
+                            {
+                                "value": "Bottom",
+                                "displayName": "Bottom",
+                                "displayNameKey": "Visual_Legend_Position_Bottom"
+                            },
+                            {
+                                "value": "Left",
+                                "displayName": "Left",
+                                "displayNameKey": "Visual_Legend_Position_Left"
+                            },
+                            {
+                                "value": "Right",
+                                "displayName": "Right",
+                                "displayNameKey": "Visual_Legend_Position_Right"
+                            },
+                            {
+                                "value": "TopCenter",
+                                "displayName": "Top Center",
+                                "displayNameKey": "Visual_Legend_Position_Top_Center"
+                            },
+                            {
+                                "value": "BottomCenter",
+                                "displayName": "Bottom Center",
+                                "displayNameKey": "Visual_Legend_Position_Bottom_Center"
+                            },
+                            {
+                                "value": "LeftCenter",
+                                "displayName": "Left Center",
+                                "displayNameKey": "Visual_Legend_Position_Left_Center"
+                            },
+                            {
+                                "value": "RightCenter",
+                                "displayName": "Right center",
+                                "displayNameKey": "Visual_Legend_Position_Right_Center"
+                            }
+                        ]
+                    }
+                },
+                "showTitle": {
+                    "displayName": "Title",
+                    "displayNameKey": "Visual_Title",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "titleText": {
+                    "displayName": "Legend Name",
+                    "displayNameKey": "Visual_Legend_Name",
+                    "type": {
+                        "text": true
+                    },
+                    "suppressFormatPainterCopy": true
+                },
+                "labelColor": {
+                    "displayName": "Color",
+                    "displayNameKey": "Visual_Legend_Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fontSize": {
+                    "displayName": "Text Size",
+                    "displayNameKey": "Visual_TextSize",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        },
+        "categories": {
+            "displayName": "Group",
+            "displayNameKey": "Visual_Group",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "displayNameKey": "Visual_Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+              "fill": {
+                "displayName": "Color",
+                "displayNameKey": "Visual_Color",
+                "type": {
+                  "fill": {
+                    "solid": {
+                      "color": true
+                    }
+                  }
+                }
+              },
+              "fontSize": {
+                "displayName": "Text Size",
+                "displayNameKey": "Visual_TextSize",
+                "type": {
+                  "formatting": {
+                    "fontSize": true
+                  }
+                }
+              },
+              "position": {
+                "displayName": "Position",
+                "displayNameKey": "Visual_Position",
+                "type": {
+                  "enumeration": [
+                    {
+                      "value": "Left",
+                      "displayName": "Left",                      
+                      "displayNameKey": "Visual_Group_Left"
+                    },
+                    {
+                      "value": "Right",
+                      "displayName": "Right",                      
+                      "displayNameKey": "Visual_Group_Right"
+                    }
+                  ]
+                }
+              }
+            }
+        }
+    },
+    "supportsHighlight": true,
+    "sorting": {
+        "default": {}
+    }
+}
